@@ -1,22 +1,11 @@
-use convert_case::Case;
-use convert_case::Casing;
-use proc_macro::TokenStream;
-use quote::quote;
-use syn::ItemTrait;
-use syn::Data;
-use syn::Ident;
-use syn::ReturnType;
-use syn::TraitItem;
-
 #[proc_macro_derive(ProviderKindFromConfigTraitDerive)]
-pub fn derive_provider_kind_from_config(input: TokenStream) -> TokenStream {
+pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let ast: syn::DeriveInput =
         syn::parse(input).expect("cannot parse input into syn::DeriveInput"); //if need to print ast use syn = { version = "1.0.75", features = ["extra-traits"]} instead of syn="1.0.75"
-    let ident: &Ident = &ast.ident;
-    let data: Data = ast.data;
-    let trait_name: Ident;
-    let function_vec_idents: Vec<(Ident, ReturnType)>;
-    let trait_handle = quote! {
+    let ident: &syn::Ident = &ast.ident;
+    let data: syn::Data = ast.data;
+    let function_vec_idents: Vec<(syn::Ident, syn::ReturnType)>;
+    let trait_handle = quote::quote! {
         pub trait ProviderKindFromConfigTrait {
             #[deny(
                 clippy::indexing_slicing,
@@ -167,23 +156,24 @@ pub fn derive_provider_kind_from_config(input: TokenStream) -> TokenStream {
             fn links_limit(&self) -> i64;
         }
     };
-    let token_stream: proc_macro::TokenStream = trait_handle.to_string()
-                .parse()
-                .expect("cannot parse file into proc_macro::TokenStream");
-            let trait_ast: ItemTrait = syn::parse(token_stream)
-                .expect("cannot parse token_stream from file into syn::ItemTrait");
-            trait_name = trait_ast.ident;
-            function_vec_idents = trait_ast
-                .items
-                .iter()
-                .filter_map(|trait_item| match trait_item {
-                    TraitItem::Method(trait_item_method) => Some((
-                        trait_item_method.sig.ident.clone(),
-                        trait_item_method.sig.output.clone(),
-                    )),
-                    _ => None,
-                })
-                .collect();
+    let token_stream: proc_macro::TokenStream = trait_handle
+        .to_string()
+        .parse()
+        .expect("cannot parse file into proc_macro::TokenStream");
+    let trait_ast: syn::ItemTrait =
+        syn::parse(token_stream).expect("cannot parse token_stream from file into syn::ItemTrait");
+    let trait_name = trait_ast.ident;
+    function_vec_idents = trait_ast
+        .items
+        .iter()
+        .filter_map(|trait_item| match trait_item {
+            syn::TraitItem::Method(trait_item_method) => Some((
+                trait_item_method.sig.ident.clone(),
+                trait_item_method.sig.output.clone(),
+            )),
+            _ => None,
+        })
+        .collect();
     let variants = if let syn::Data::Enum(syn::DataEnum { variants, .. }) = data {
         variants
     } else {
@@ -204,29 +194,33 @@ pub fn derive_provider_kind_from_config(input: TokenStream) -> TokenStream {
             }
         }
         let variants_for_quote = variants.iter().map(|variant| {
+            use convert_case::Casing;
             let variant_name = &variant.ident;
             let config_field_name = syn::Ident::new(
                 &format!(
                     "{}_{}",
                     function_name_ident
                         .to_string()
-                        .to_case(Case::Snake)
+                        .to_case(convert_case::Case::Snake)
                         .to_lowercase(),
-                    variant_name.to_string().to_case(Case::Snake).to_lowercase()
+                    variant_name
+                        .to_string()
+                        .to_case(convert_case::Case::Snake)
+                        .to_lowercase()
                 ),
                 variant_name.span(),
             );
             if is_str {
-                quote! {
+                quote::quote! {
                     #ident::#variant_name => &CONFIG.#config_field_name
                 }
             } else {
-                quote! {
+                quote::quote! {
                         #ident::#variant_name => CONFIG.#config_field_name
                 }
             }
         });
-        function_quote_vec_ident.push(quote! {
+        function_quote_vec_ident.push(quote::quote! {
             #[deny(
                 clippy::indexing_slicing,
                 clippy::unwrap_used,
@@ -240,7 +234,7 @@ pub fn derive_provider_kind_from_config(input: TokenStream) -> TokenStream {
             }
         });
     }
-    let generated = quote! {
+    let generated = quote::quote! {
         #trait_handle
         impl #trait_name for #ident {
             #(#function_quote_vec_ident)*
