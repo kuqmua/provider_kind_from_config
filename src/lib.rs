@@ -1,7 +1,7 @@
-#[proc_macro_derive(ProviderKindFromConfigTraitDerive)]
+#[proc_macro_derive(ProviderKindFromConfigTrait)]
 pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let ast: syn::DeriveInput =
-        syn::parse(input).expect("cannot parse input into syn::DeriveInput"); //if need to print ast use syn = { version = "1.0.75", features = ["extra-traits"]} instead of syn="1.0.75"
+        syn::parse(input).expect("ProviderKindFromConfigTrait syn::parse(input) failed"); //if need to print ast use syn = { version = "1.0.75", features = ["extra-traits"]} instead of syn="1.0.75"
     let ident: &syn::Ident = &ast.ident;
     let data: syn::Data = ast.data;
     let function_vec_idents: Vec<(syn::Ident, syn::ReturnType)>;
@@ -212,11 +212,11 @@ pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_
             );
             if is_str {
                 quote::quote! {
-                    #ident::#variant_name => &CONFIG.#config_field_name
+                    #ident::#variant_name => &crate::config_mods::lazy_static_config::CONFIG.#config_field_name
                 }
             } else {
                 quote::quote! {
-                        #ident::#variant_name => CONFIG.#config_field_name
+                        #ident::#variant_name => crate::config_mods::lazy_static_config::CONFIG.#config_field_name
                 }
             }
         });
