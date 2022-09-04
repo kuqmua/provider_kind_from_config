@@ -153,7 +153,7 @@ pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_
                 clippy::integer_arithmetic,
                 clippy::float_arithmetic
             )]
-            fn links_limit(&self) -> i64;
+            fn links_limit(&self) -> usize;
         }
     };
     let token_stream: proc_macro::TokenStream = trait_handle
