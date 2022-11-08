@@ -212,11 +212,11 @@ pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_
             );
             if is_str {
                 quote::quote! {
-                    #ident::#variant_name => &crate::lazy_static::config::CONFIG.#config_field_name
+                    #ident::#variant_name => &crate::once_cell_globals::config::CONFIG.#config_field_name
                 }
             } else {
                 quote::quote! {
-                        #ident::#variant_name => crate::lazy_static::config::CONFIG.#config_field_name
+                        #ident::#variant_name => crate::once_cell_globals::config::CONFIG.#config_field_name
                 }
             }
         });
