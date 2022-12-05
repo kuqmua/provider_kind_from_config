@@ -6,15 +6,15 @@
 )]
 #![allow(clippy::too_many_arguments)]
 
-#[proc_macro_derive(ProviderKindFromConfigTrait)]
+#[proc_macro_derive(ProviderKindFromConfig)]
 pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     let ast: syn::DeriveInput =
-        syn::parse(input).expect("ProviderKindFromConfigTrait syn::parse(input) failed"); //if need to print ast use syn = { version = "1.0.75", features = ["extra-traits"]} instead of syn="1.0.75"
+        syn::parse(input).expect("ProviderKindFromConfig syn::parse(input) failed"); //if need to print ast use syn = { version = "1.0.75", features = ["extra-traits"]} instead of syn="1.0.75"
     let ident: &syn::Ident = &ast.ident;
     let data: syn::Data = ast.data;
     let function_vec_idents: Vec<(syn::Ident, syn::ReturnType)>;
     let trait_handle = quote::quote! {
-        pub trait ProviderKindFromConfigTrait {
+        pub trait ProviderKindFromConfig {
             fn is_mongo_initialization_enabled(&self) -> bool;
             fn is_mongo_write_error_logs_enabled(&self) -> bool;
             fn is_mongo_cleaning_warning_logs_db_enabled(&self) -> bool;
