@@ -8,6 +8,7 @@
 
 #[proc_macro_derive(ProviderKindFromConfig)]
 pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
+    proc_macro_helpers::panic_location::panic_location("ProviderKindFromConfig");
     let ast: syn::DeriveInput =
         syn::parse(input).expect("ProviderKindFromConfig syn::parse(input) failed"); //if need to print ast use syn = { version = "1.0.75", features = ["extra-traits"]} instead of syn="1.0.75"
     let ident: &syn::Ident = &ast.ident;
