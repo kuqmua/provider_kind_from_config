@@ -19,157 +19,157 @@ pub fn provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::
             fn is_mongo_initialization_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsMongoInitializationEnabledArxiv
-                    + crate::traits::fields::GetIsMongoInitializationEnabledBiorxiv
-                    + crate::traits::fields::GetIsMongoInitializationEnabledGithub
-                    + crate::traits::fields::GetIsMongoInitializationEnabledHabr
-                    + crate::traits::fields::GetIsMongoInitializationEnabledMedrxiv
-                    + crate::traits::fields::GetIsMongoInitializationEnabledReddit
-                    + crate::traits::fields::GetIsMongoInitializationEnabledTwitter
+                    impl crate::traits::config_fields::GetIsMongoInitializationEnabledArxiv
+                    + crate::traits::config_fields::GetIsMongoInitializationEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsMongoInitializationEnabledGithub
+                    + crate::traits::config_fields::GetIsMongoInitializationEnabledHabr
+                    + crate::traits::config_fields::GetIsMongoInitializationEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsMongoInitializationEnabledReddit
+                    + crate::traits::config_fields::GetIsMongoInitializationEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_mongo_write_error_logs_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsMongoWriteErrorLogsEnabledArxiv
-                    + crate::traits::fields::GetIsMongoWriteErrorLogsEnabledBiorxiv
-                    + crate::traits::fields::GetIsMongoWriteErrorLogsEnabledGithub
-                    + crate::traits::fields::GetIsMongoWriteErrorLogsEnabledHabr
-                    + crate::traits::fields::GetIsMongoWriteErrorLogsEnabledMedrxiv
-                    + crate::traits::fields::GetIsMongoWriteErrorLogsEnabledReddit
-                    + crate::traits::fields::GetIsMongoWriteErrorLogsEnabledTwitter
+                    impl crate::traits::config_fields::GetIsMongoWriteErrorLogsEnabledArxiv
+                    + crate::traits::config_fields::GetIsMongoWriteErrorLogsEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsMongoWriteErrorLogsEnabledGithub
+                    + crate::traits::config_fields::GetIsMongoWriteErrorLogsEnabledHabr
+                    + crate::traits::config_fields::GetIsMongoWriteErrorLogsEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsMongoWriteErrorLogsEnabledReddit
+                    + crate::traits::config_fields::GetIsMongoWriteErrorLogsEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_mongo_cleaning_warning_logs_db_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsMongoCleaningWarningLogsDbEnabledArxiv
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbEnabledBiorxiv
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbEnabledGithub
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbEnabledHabr
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbEnabledMedrxiv
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbEnabledReddit
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbEnabledTwitter
+                    impl crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbEnabledArxiv
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbEnabledGithub
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbEnabledHabr
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbEnabledReddit
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_mongo_cleaning_warning_logs_db_collections_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledArxiv
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledBiorxiv
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledGithub
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledHabr
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledMedrxiv
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledReddit
-                    + crate::traits::fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledTwitter
+                    impl crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledArxiv
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledGithub
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledHabr
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledReddit
+                    + crate::traits::config_fields::GetIsMongoCleaningWarningLogsDbCollectionsEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_mongo_link_parts_randomize_order_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsMongoLinkPartsRandomizeOrderEnabledArxiv
-                    + crate::traits::fields::GetIsMongoLinkPartsRandomizeOrderEnabledBiorxiv
-                    + crate::traits::fields::GetIsMongoLinkPartsRandomizeOrderEnabledGithub
-                    + crate::traits::fields::GetIsMongoLinkPartsRandomizeOrderEnabledHabr
-                    + crate::traits::fields::GetIsMongoLinkPartsRandomizeOrderEnabledMedrxiv
-                    + crate::traits::fields::GetIsMongoLinkPartsRandomizeOrderEnabledReddit
-                    + crate::traits::fields::GetIsMongoLinkPartsRandomizeOrderEnabledTwitter
+                    impl crate::traits::config_fields::GetIsMongoLinkPartsRandomizeOrderEnabledArxiv
+                    + crate::traits::config_fields::GetIsMongoLinkPartsRandomizeOrderEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsMongoLinkPartsRandomizeOrderEnabledGithub
+                    + crate::traits::config_fields::GetIsMongoLinkPartsRandomizeOrderEnabledHabr
+                    + crate::traits::config_fields::GetIsMongoLinkPartsRandomizeOrderEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsMongoLinkPartsRandomizeOrderEnabledReddit
+                    + crate::traits::config_fields::GetIsMongoLinkPartsRandomizeOrderEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_postgres_initialization_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsPostgresInitializationEnabledArxiv
-                    + crate::traits::fields::GetIsPostgresInitializationEnabledBiorxiv
-                    + crate::traits::fields::GetIsPostgresInitializationEnabledGithub
-                    + crate::traits::fields::GetIsPostgresInitializationEnabledHabr
-                    + crate::traits::fields::GetIsPostgresInitializationEnabledMedrxiv
-                    + crate::traits::fields::GetIsPostgresInitializationEnabledReddit
-                    + crate::traits::fields::GetIsPostgresInitializationEnabledTwitter
+                    impl crate::traits::config_fields::GetIsPostgresInitializationEnabledArxiv
+                    + crate::traits::config_fields::GetIsPostgresInitializationEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsPostgresInitializationEnabledGithub
+                    + crate::traits::config_fields::GetIsPostgresInitializationEnabledHabr
+                    + crate::traits::config_fields::GetIsPostgresInitializationEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsPostgresInitializationEnabledReddit
+                    + crate::traits::config_fields::GetIsPostgresInitializationEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_write_error_logs_in_local_folder_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsWriteErrorLogsInLocalFolderEnabledArxiv
-                    + crate::traits::fields::GetIsWriteErrorLogsInLocalFolderEnabledBiorxiv
-                    + crate::traits::fields::GetIsWriteErrorLogsInLocalFolderEnabledGithub
-                    + crate::traits::fields::GetIsWriteErrorLogsInLocalFolderEnabledHabr
-                    + crate::traits::fields::GetIsWriteErrorLogsInLocalFolderEnabledMedrxiv
-                    + crate::traits::fields::GetIsWriteErrorLogsInLocalFolderEnabledReddit
-                    + crate::traits::fields::GetIsWriteErrorLogsInLocalFolderEnabledTwitter
+                    impl crate::traits::config_fields::GetIsWriteErrorLogsInLocalFolderEnabledArxiv
+                    + crate::traits::config_fields::GetIsWriteErrorLogsInLocalFolderEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsWriteErrorLogsInLocalFolderEnabledGithub
+                    + crate::traits::config_fields::GetIsWriteErrorLogsInLocalFolderEnabledHabr
+                    + crate::traits::config_fields::GetIsWriteErrorLogsInLocalFolderEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsWriteErrorLogsInLocalFolderEnabledReddit
+                    + crate::traits::config_fields::GetIsWriteErrorLogsInLocalFolderEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_cleaning_warning_logs_directory_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsCleaningWarningLogsDirectoryEnabledArxiv
-                    + crate::traits::fields::GetIsCleaningWarningLogsDirectoryEnabledBiorxiv
-                    + crate::traits::fields::GetIsCleaningWarningLogsDirectoryEnabledGithub
-                    + crate::traits::fields::GetIsCleaningWarningLogsDirectoryEnabledHabr
-                    + crate::traits::fields::GetIsCleaningWarningLogsDirectoryEnabledMedrxiv
-                    + crate::traits::fields::GetIsCleaningWarningLogsDirectoryEnabledReddit
-                    + crate::traits::fields::GetIsCleaningWarningLogsDirectoryEnabledTwitter
+                    impl crate::traits::config_fields::GetIsCleaningWarningLogsDirectoryEnabledArxiv
+                    + crate::traits::config_fields::GetIsCleaningWarningLogsDirectoryEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsCleaningWarningLogsDirectoryEnabledGithub
+                    + crate::traits::config_fields::GetIsCleaningWarningLogsDirectoryEnabledHabr
+                    + crate::traits::config_fields::GetIsCleaningWarningLogsDirectoryEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsCleaningWarningLogsDirectoryEnabledReddit
+                    + crate::traits::config_fields::GetIsCleaningWarningLogsDirectoryEnabledTwitter
                 )
             ) -> &'a bool;
             fn check_link(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetCheckLinkArxiv
-                    + crate::traits::fields::GetCheckLinkBiorxiv
-                    + crate::traits::fields::GetCheckLinkGithub
-                    + crate::traits::fields::GetCheckLinkHabr
-                    + crate::traits::fields::GetCheckLinkMedrxiv
-                    + crate::traits::fields::GetCheckLinkReddit
-                    + crate::traits::fields::GetCheckLinkTwitter
+                    impl crate::traits::config_fields::GetCheckLinkArxiv
+                    + crate::traits::config_fields::GetCheckLinkBiorxiv
+                    + crate::traits::config_fields::GetCheckLinkGithub
+                    + crate::traits::config_fields::GetCheckLinkHabr
+                    + crate::traits::config_fields::GetCheckLinkMedrxiv
+                    + crate::traits::config_fields::GetCheckLinkReddit
+                    + crate::traits::config_fields::GetCheckLinkTwitter
                 )
             ) -> &'a String;
             fn is_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsEnabledArxiv
-                    + crate::traits::fields::GetIsEnabledBiorxiv
-                    + crate::traits::fields::GetIsEnabledGithub
-                    + crate::traits::fields::GetIsEnabledHabr
-                    + crate::traits::fields::GetIsEnabledMedrxiv
-                    + crate::traits::fields::GetIsEnabledReddit
-                    + crate::traits::fields::GetIsEnabledTwitter
+                    impl crate::traits::config_fields::GetIsEnabledArxiv
+                    + crate::traits::config_fields::GetIsEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsEnabledGithub
+                    + crate::traits::config_fields::GetIsEnabledHabr
+                    + crate::traits::config_fields::GetIsEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsEnabledReddit
+                    + crate::traits::config_fields::GetIsEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_dbs_initialization_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsDbsInitializationEnabledArxiv
-                    + crate::traits::fields::GetIsDbsInitializationEnabledBiorxiv
-                    + crate::traits::fields::GetIsDbsInitializationEnabledGithub
-                    + crate::traits::fields::GetIsDbsInitializationEnabledHabr
-                    + crate::traits::fields::GetIsDbsInitializationEnabledMedrxiv
-                    + crate::traits::fields::GetIsDbsInitializationEnabledReddit
-                    + crate::traits::fields::GetIsDbsInitializationEnabledTwitter
+                    impl crate::traits::config_fields::GetIsDbsInitializationEnabledArxiv
+                    + crate::traits::config_fields::GetIsDbsInitializationEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsDbsInitializationEnabledGithub
+                    + crate::traits::config_fields::GetIsDbsInitializationEnabledHabr
+                    + crate::traits::config_fields::GetIsDbsInitializationEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsDbsInitializationEnabledReddit
+                    + crate::traits::config_fields::GetIsDbsInitializationEnabledTwitter
                 )
             ) -> &'a bool;
             fn is_links_limit_enabled(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetIsLinksLimitEnabledArxiv
-                    + crate::traits::fields::GetIsLinksLimitEnabledBiorxiv
-                    + crate::traits::fields::GetIsLinksLimitEnabledGithub
-                    + crate::traits::fields::GetIsLinksLimitEnabledHabr
-                    + crate::traits::fields::GetIsLinksLimitEnabledMedrxiv
-                    + crate::traits::fields::GetIsLinksLimitEnabledReddit
-                    + crate::traits::fields::GetIsLinksLimitEnabledTwitter
+                    impl crate::traits::config_fields::GetIsLinksLimitEnabledArxiv
+                    + crate::traits::config_fields::GetIsLinksLimitEnabledBiorxiv
+                    + crate::traits::config_fields::GetIsLinksLimitEnabledGithub
+                    + crate::traits::config_fields::GetIsLinksLimitEnabledHabr
+                    + crate::traits::config_fields::GetIsLinksLimitEnabledMedrxiv
+                    + crate::traits::config_fields::GetIsLinksLimitEnabledReddit
+                    + crate::traits::config_fields::GetIsLinksLimitEnabledTwitter
                 )
             ) -> &'a bool;
             fn links_limit(
                 &'a self,
                 config : &'a (
-                    impl crate::traits::fields::GetLinksLimitArxiv
-                    + crate::traits::fields::GetLinksLimitBiorxiv
-                    + crate::traits::fields::GetLinksLimitGithub
-                    + crate::traits::fields::GetLinksLimitHabr
-                    + crate::traits::fields::GetLinksLimitMedrxiv
-                    + crate::traits::fields::GetLinksLimitReddit
-                    + crate::traits::fields::GetLinksLimitTwitter
+                    impl crate::traits::config_fields::GetLinksLimitArxiv
+                    + crate::traits::config_fields::GetLinksLimitBiorxiv
+                    + crate::traits::config_fields::GetLinksLimitGithub
+                    + crate::traits::config_fields::GetLinksLimitHabr
+                    + crate::traits::config_fields::GetLinksLimitMedrxiv
+                    + crate::traits::config_fields::GetLinksLimitReddit
+                    + crate::traits::config_fields::GetLinksLimitTwitter
                 )
             ) -> &'a usize;
         }
@@ -243,10 +243,10 @@ pub fn provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::
                     .to_case(convert_case::Case::Pascal),
                 );
                 match index {
-                    0 => format!("impl crate::traits::fields::{config_impl_name}")
+                    0 => format!("impl crate::traits::config_fields::{config_impl_name}")
                     .parse::<proc_macro2::TokenStream>()
                     .unwrap_or_else(|_| panic!("1")),
-                    _ => format!("+ crate::traits::fields::{config_impl_name}")
+                    _ => format!("+ crate::traits::config_fields::{config_impl_name}")
                     .parse::<proc_macro2::TokenStream>()
                     .unwrap_or_else(|_| panic!("2")),
                 }
