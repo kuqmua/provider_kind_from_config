@@ -7,7 +7,7 @@
 #![allow(clippy::too_many_arguments)]
 
 #[proc_macro_derive(ProviderKindFromConfig)]
-pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
+pub fn provider_kind_from_config(input: proc_macro::TokenStream) -> proc_macro::TokenStream {
     proc_macro_helpers::panic_location::panic_location("ProviderKindFromConfig");
     let ast: syn::DeriveInput =
         syn::parse(input).expect("ProviderKindFromConfig syn::parse(input) failed"); //if need to print ast use syn = { version = "1.0.75", features = ["extra-traits"]} instead of syn="1.0.75"
@@ -199,18 +199,18 @@ pub fn derive_provider_kind_from_config(input: proc_macro::TokenStream) -> proc_
     };
     let mut function_quote_vec_ident = Vec::with_capacity(function_vec_idents.len());
     for (function_name_ident, output) in function_vec_idents {
-        let mut is_str = false;
-        if let syn::ReturnType::Type(_, box_type) = &output {
-            if let syn::Type::Reference(type_reference) = &**box_type {
-                if let syn::Type::Path(reference_type_path) = &*type_reference.elem {
-                    for i in &reference_type_path.path.segments {
-                        if i.ident == "str" {
-                            is_str = true;
-                        }
-                    }
-                }
-            }
-        }
+        // let mut is_str = false;
+        // if let syn::ReturnType::Type(_, box_type) = &output {
+        //     if let syn::Type::Reference(type_reference) = &**box_type {
+        //         if let syn::Type::Path(reference_type_path) = &*type_reference.elem {
+        //             for i in &reference_type_path.path.segments {
+        //                 if i.ident == "str" {
+        //                     is_str = true;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
         let variants_for_quote = variants.iter().map(|variant| {
             use convert_case::Casing;
             let variant_name = &variant.ident;
